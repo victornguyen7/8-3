@@ -58,20 +58,20 @@ public class gui extends JFrame implements ActionListener{
 
             panel.removeAll();
 
-            JLabel initialLabel = new JLabel("Hello " + textField.getText());
+            JLabel initialLabel = new JLabel("Happy Women's Day");
             initialLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 18));
             initialLabel.setForeground(Color.black);
             initialLabel.setBackground(Color.white);
 
-            initialLabel.setBounds(x, 129, 200, 50);
+            initialLabel.setBounds(390, 110, 200, 100);
             layeredPane.add(initialLabel, JLayeredPane.PALETTE_LAYER);
 
             JButton secondButton = new JButton("Click me");
             secondButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    initialLabel.setText("Happy Women's Day");
-					initialLabel.setBounds(395, 129, 200, 50);
+                    initialLabel.setText("<html>Gửi đến cô gái<br>ở trước màn hình.</html>");
+					initialLabel.setBounds(410, 110, 200, 100);
 					layeredPane.remove(secondButton);
                     layeredPane.revalidate();
                     layeredPane.repaint();
@@ -85,7 +85,7 @@ public class gui extends JFrame implements ActionListener{
             thirdButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-					initialLabel.setText("<html>Chúc cô gái ở<br>trước màn hình<br>luôn luôn xinh đẹp</html>");
+					initialLabel.setText("<html>Khi ở độ tuổi đẹp<br>nhất, hãy nhớ yêu<br>thương bản thân<br>mình</html>");
 					initialLabel.setBounds(410, 110, 200, 100);
 					layeredPane.remove(thirdButton);
                     layeredPane.revalidate();
@@ -100,8 +100,8 @@ public class gui extends JFrame implements ActionListener{
             fourthButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-					initialLabel.setText("<html>luôn luôn hạnh phúc<br>và thành công trên<br>con đường đã chọn.</html>");
-					initialLabel.setBounds(400, 110, 200, 100);
+					initialLabel.setText("<html>Chúc bạn mãi<br>mãi hạnh phúc,<br>luôn nở nụ cười<br>trên môi!!</html>");
+					initialLabel.setBounds(410, 110, 200, 100);
 					layeredPane.remove(fourthButton);
                     layeredPane.revalidate();
                     layeredPane.repaint();
