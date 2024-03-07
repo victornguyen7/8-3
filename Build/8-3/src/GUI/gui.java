@@ -16,6 +16,7 @@ public class gui extends JFrame implements ActionListener{
 	private JFrame secondFrame;
 	private JPanel panel;
 	private ImageIcon image;
+    private ImageIcon imageFlower;
 	private JButton button;
 	private JTextField textField;
 	private JLayeredPane layeredPane;
@@ -37,7 +38,7 @@ public class gui extends JFrame implements ActionListener{
 		panel.add(textField);
 		firstFrame.add(panel, BorderLayout.CENTER);
 		firstFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		firstFrame.setTitle("Victor");
+		firstFrame.setTitle("Women's Day");
 		firstFrame.pack();
 		firstFrame.setVisible(true);
 	}
@@ -108,6 +109,36 @@ public class gui extends JFrame implements ActionListener{
             });
             fourthButton.setBounds(x, 410, 100, 50);
             layeredPane.add(fourthButton, JLayeredPane.MODAL_LAYER);
+
+            JButton fifthButton = new JButton("Click me");
+            fifthButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    // Remove the button
+                    layeredPane.remove(fifthButton);
+                    layeredPane.remove(displayField);
+                    initialLabel.setText("Hihihihihi");
+					initialLabel.setBounds(100, 100, 200, 100);
+                    initialLabel.setFont(new Font("Comic Sans MS", Font.PLAIN, 25));
+                    initialLabel.setForeground(Color.white);
+                    
+                    // Load the new image
+                    ImageIcon imageFlower = new ImageIcon(getClass().getResource("ce99e8383876d81bdc0712ed79193afe.jpg"));
+                    JLabel displayField_2 = new JLabel(imageFlower);
+                    displayField_2.setBounds(0, 0, imageFlower.getIconWidth(), imageFlower.getIconHeight());
+                    layeredPane.add(displayField_2, JLayeredPane.DEFAULT_LAYER);
+                    secondFrame.setSize(imageFlower.getIconWidth(), imageFlower.getIconHeight());
+
+
+            
+                    // Revalidate and repaint the layered pane to reflect changes
+                    layeredPane.revalidate();
+                    layeredPane.repaint();
+                }
+            });
+            
+            fifthButton.setBounds(x, 410, 100, 50);
+            layeredPane.add(fifthButton, JLayeredPane.MODAL_LAYER);
 
             secondFrame.add(layeredPane, BorderLayout.CENTER);
             secondFrame.setSize(image.getIconWidth(), image.getIconHeight());
